@@ -1,7 +1,9 @@
-<h1>All your cocktails !</h1>
+<div class="container">
+  <h1 class="text-center">All your cocktails !</h1>
 
-<% @cocktails.each do |cocktail| %>
-  <ul>
-    <li><%= cocktail.name %></li>
-  </ul>
-<% end %>
+  <% @cocktails.each do |cocktail| %>
+    <ul>
+      <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    </ul>
+  <% end %>
+</div>

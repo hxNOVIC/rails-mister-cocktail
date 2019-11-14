@@ -1,9 +1,18 @@
 <div class="container">
   <h1 class="text-center">All your cocktails !</h1>
 
-  <% @cocktails.each do |cocktail| %>
-    <ul>
-      <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    </ul>
-  <% end %>
+  <div class="d-flex justify-content-around">
+    <%@cocktails.each do |cocktail| %>
+      <div class="card" style="width: 18rem;">
+        <img id="img-card-index"src="https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" class="card-img-top" alt="#">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    <% end %>
+    </div>
+
+
 </div>

@@ -1,18 +1,24 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1570878080527-ef8993f691cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=976&q=80);">
+  <div class="container">
+    <h1>Cocktails brings <strong>drinking skills</strong> to <strong>funny people</strong>!</h1>
+    <p>Make your own cocktail recipe and get drunk TONIGHT !!</p>
+    <%= link_to "Start now!", new_cocktail_path, class: "btn btn-flat" %>
+  </div>
+</div>
 <div class="container">
-  <h1 class="text-center">All your cocktails !</h1>
+  <h1 class="text-center mb-3">All your cocktails !</h1>
 
-  <div class="d-flex justify-content-around">
+  <div class="d-flex flex-wrap justify-content-around">
     <%@cocktails.each do |cocktail| %>
-      <div class="card" style="width: 18rem;">
-        <img id="img-card-index"src="https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" class="card-img-top" alt="#">
+      <div class="card mb-3" style="width: 18rem;">
+        <img style="height: 300px" class="img-card-index"src=<%= cocktail.img_url %>  class="card-img-top" alt="#">
         <div class="card-body">
           <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p class="card-text">some bullshit about this cocktail.</p>
         </div>
       </div>
+
     <% end %>
     </div>
-
 
 </div>

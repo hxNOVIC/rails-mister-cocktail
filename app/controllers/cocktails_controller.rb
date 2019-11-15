@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
@@ -6,6 +8,14 @@ class CocktailsController < ApplicationController
   def show
     @dose = Dose.new
     @cocktail = Cocktail.find(params[:id])
+    parse = @cocktail.name.downcase
+    url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=#{parse}"
+    cocktail_db_serialized = open(url).read
+    cocktail_db = JSON.parse(cocktail_db_serialized)
+    @img_url = cocktail_db['drinks'][0]['strDrinkThumb']
+    @category = cocktail_db['drinks'][0]['strCategory']
+    @iba = cocktail_db['drinks'][0]['strIBA']
+    @recipe = cocktail_db['drinks'][0]['strInstructions']
   end
 
   def new
@@ -24,6 +34,6 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :img_url)
   end
 end

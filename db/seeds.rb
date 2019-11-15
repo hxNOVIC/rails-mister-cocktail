@@ -7,16 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
-Ingredient.create(name: "Light rum")
-Ingredient.create(name: "Applejack")
-Ingredient.create(name: "Gin")
-Ingredient.create(name: "Dark rum")
-Ingredient.create(name: "Sweet Vermouth")
-Ingredient.create(name: "Strawberry schnapps")
-Ingredient.create(name: "Scotch")
-Ingredient.create(name: "Apricot brandy")
-Ingredient.create(name: "Lemon vodka")
-Cocktail.create(name: "Mojito")
+require 'open-uri'
+50.times do
+  url2 = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+  cocktail_db_serialized2 = open(url2).read
+  cocktail_db2 = JSON.parse(cocktail_db_serialized2)
+  cocktail_db2['drinks'].each do |drink|
+    Cocktail.create!(name: drink['strDrink'])
+  end
+end

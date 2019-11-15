@@ -11,7 +11,10 @@
   <div class="d-flex flex-wrap justify-content-around">
     <%@cocktails.each do |cocktail| %>
       <div class="card mb-3" style="width: 18rem;">
-        <img style="height: 300px" class="img-card-index"src=<%= cocktail.img_url %>  class="card-img-top" alt="#">
+<!--         <%# if cocktail.photo.nil? %>
+          <%# cocktail.photo.key = () %>
+          <%# end %> -->
+        <%= cl_image_tag cocktail.photo.key, height: 300, width: 286, crop: :fill %>
         <div class="card-body">
           <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
           <p class="card-text">some bullshit about this cocktail.</p>
@@ -20,5 +23,4 @@
 
     <% end %>
     </div>
-
 </div>

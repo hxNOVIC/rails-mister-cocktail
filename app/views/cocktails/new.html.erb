@@ -13,6 +13,7 @@
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name %>
           <%= f.input :img_url %>
+          <%= f.input :photo, as: :file, required: true %>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
     </div>

@@ -38,6 +38,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'faker'
+gem 'cloudinary', '~> 1.12.0'
+gem 'active_storage_validations'
 gem 'dotenv-rails', groups: [:development, :test]
 
 # Reduces boot times through caching; required in config/boot.rb

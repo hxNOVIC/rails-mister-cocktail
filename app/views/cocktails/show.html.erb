@@ -11,9 +11,8 @@
 
   <p class="text-center"><%= link_to 'Back to cocktails', cocktails_path%></p>
 
-  <p class="text-center"></p>
 
-  <h1>Create a new dose</h1>
+  <h1 class="text-center">Create a new dose</h1>
 
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :description %>

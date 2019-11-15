@@ -6,15 +6,15 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col">
-      <h1>Create a new cocktail</h1>
+    <div class="col-lg-12">
+      <h1 class="text-center">Create a new cocktail</h1>
+      <p class="text-center"><%= link_to 'Back to cocktails', cocktails_path %></p>
 
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name %>
           <%= f.input :img_url %>
-          <%= f.button :submit %>
+          <%= f.submit class: "btn btn-primary" %>
         <% end %>
-        <%= link_to 'Back to cocktails', cocktails_path %>
     </div>
   </div>
 </div>

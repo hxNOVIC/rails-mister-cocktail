@@ -13,3 +13,63 @@ h1 {
 body {
   background-color: #dbe2ef;
 }
+
+.footer {
+  background-color: #333333;
+  height: 80px;
+  padding-top: 10px;
+
+  h6 {
+    color: #1EDD88;
+  }
+}
+
+.logo-footer {
+  margin-top: 5px;
+}
+
+.list-inline {
+  background-color: transparent;
+  color: #1EDD88;
+  display: inline;
+  margin: 0px;
+}
+
+.fab {
+  font-size: 24px;
+  text-decoration: none;
+
+  &:hover {
+    color: #1BCB7F;
+    transition: color 0.6s ease;
+  }
+}
+
+li {
+  text-decoration: none;
+}
+
+#cocktail_name {
+  width: 300px;
+  margin-left: 60px;
+}
+
+.cocktail_photo {
+  display: flex;
+  justify-content: center;
+  padding-left: 344px;
+}
+
+#cocktail_photo {
+  margin-left: 63px;
+}
+
+.cocktail_name {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin-left: 471px;
+  margin-bottom: 10px;
+}

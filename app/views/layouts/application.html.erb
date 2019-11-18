@@ -10,10 +10,26 @@
   </head>
 
   <body>
+    <%= yield %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <div class="footer">
+      <h6 class="text-center">Share it with your friends !</h6>
+      <ul class="list-group list-group-horizontal d-flex justify-content-center">
+        <div class="logo-footer">
+          <%= link_to cocktails_path do %>
+            <li class="list-inline text-center"><i class="fab fa-facebook"></i></li>
+          <% end %>
+          <%= link_to cocktails_path do %>
+            <li class="list-inline text-center"><i class="fab fa-twitter-square"></i></li>
+          <% end %>
+          <%= link_to cocktails_path do %>
+            <li class="list-inline text-center"><i class="fab fa-instagram"></i></li>
+          <% end %>
+        </div>
+      </ul>
 
-      <%= yield %>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      </div>
+    </div>
   </body>
 </html>
+<%=  %>
